@@ -28,10 +28,30 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_menu);
 
         init();
-        buttonNameChange.setOnClickListener(this);
-        buttonInformation.setOnClickListener(this);
-        buttonExit.setOnClickListener(this);
-        buttonNext.setOnClickListener(this);
+        buttonNameChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        buttonInformation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        buttonExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 
