@@ -26,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
         buttonBelepes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ((editTextName.getText().toString().equals(""))) {
-                    SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("nev", editTextName.getText().toString());
+                SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                String seged = editTextName.getText().toString();
+                if (!seged.equals("")) {
+                    editor.putString("nev", seged);
                     editor.apply();
                     Intent intent = new Intent(MainActivity.this, Menu.class);
                     startActivity(intent);
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    //Toast.makeText(MainActivity.this, "A név mezőt kötelező kitölteni!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "A név mezőt kötelező kitölteni!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public void init()
     {
         editTextName = findViewById(R.id.editTextName);
-        buttonBelepes = findViewById(R.id.buttonNext);
+        buttonBelepes = findViewById(R.id.buttonBelepes);
         SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
         String seged = "";
         seged = sharedPreferences.getString("nev","Nincs elmentve a neved!");
