@@ -2,6 +2,7 @@ package com.example.debugging;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,6 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,30 +30,10 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_menu);
 
         init();
-        buttonNameChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        buttonInformation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        buttonExit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+        buttonNameChange.setOnClickListener(this);
+        buttonInformation.setOnClickListener(this);
+        buttonExit.setOnClickListener(this);
+        buttonNext.setOnClickListener(this);
 
     }
 
@@ -59,7 +41,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
     {
         buttonExit = findViewById(R.id.buttonExit);
         buttonInformation = findViewById(R.id.buttonInformation);
-        buttonNameChange = findViewById(R.id.buttonBack);
+        buttonNameChange = findViewById(R.id.buttonNameChange);
         buttonNext = findViewById(R.id.buttonNext);
         textViewName = findViewById(R.id.textViewName);
 
