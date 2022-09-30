@@ -18,7 +18,10 @@ public class ThirdActivity extends AppCompatActivity {
         init();
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(ThirdActivity.this,Menu.class);
+                startActivity(intent);
                 finish();
             }
         });
